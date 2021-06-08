@@ -9,8 +9,9 @@ router.post("/run", async function (req, res, next) {
   let message = crypto.hello();
   let script = Buffer.from(req.body.script, "hex");
   let input = Buffer.from(req.body.input, "hex");
+  let blockHeight = req.body.blockHeight;
   try {
-    let r = crypto.trace(script, input);
+    let r = crypto.trace(script, input, blockHeight);
     console.log(r);
     res.json({
       message: message,
