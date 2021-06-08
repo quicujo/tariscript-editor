@@ -10,11 +10,11 @@ router.post("/run", async function (req, res, next) {
   let script = Buffer.from(req.body.script, "hex");
   let input = Buffer.from(req.body.input, "hex");
   try {
-    let r = crypto.execute(script, input);
+    let r = crypto.trace(script, input);
     console.log(r);
     res.json({
       message: message,
-      stack: r.items,
+      result: r,
     });
   } catch (e) {
     console.error(e);
