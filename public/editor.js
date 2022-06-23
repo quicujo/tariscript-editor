@@ -3,7 +3,7 @@
 class Editor extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { textScript: "Hello worl", script: [], input: [] };
+    this.state = { textScript: "Hello world", script: [], input: [] };
   }
 
   handleTextScriptChanged(event) {
